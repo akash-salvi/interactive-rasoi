@@ -1,18 +1,107 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+button {
+  cursor: pointer;
+}
+
+
+@keyframes pulse-border-amber {
+  0%,
+  100% {
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+
+  50% {
+      box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes pulse-border-amber-dark {
+  0%,
+  100% {
+      box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.5);
+  }
+
+  50% {
+      box-shadow: 0 0 0 10px rgba(251, 191, 36, 0);
+  }
+}
+
+@keyframes pulse-button-amber {
+  0%,
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+
+  50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 6px rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes pulse-button-amber-dark {
+
+  0%,
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6);
+  }
+
+  50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 6px rgba(251, 191, 36, 0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+      transform: scale(0.7);
+      opacity: 0;
+  }
+
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.animate-pulse-border-amber {
+  animation: pulse-border-amber 2s infinite;
+}
+
+.dark .animate-pulse-border-amber-dark {
+  animation: pulse-border-amber-dark 2s infinite;
+}
+
+.animate-pulse-button-amber {
+  animation: pulse-button-amber 2s infinite;
+}
+
+.dark .animate-pulse-button-amber-dark {
+  animation: pulse-button-amber-dark 2s infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+/* For Confetti */
 @keyframes fall {
   0% {
       top: -10%;
       opacity: 1;
       transform: rotate(0deg);
   }
+
   100% {
       top: 110%;
       opacity: 0.5;
       transform: rotate(720deg);
   }
 }
+
 .animate-fall {
   animation: fall linear infinite;
 }

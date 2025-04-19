@@ -110,7 +110,7 @@ const RecipeDetails = ({
                 {selectedRecipeForDetail.instructions.map((step, index) => (
                   <li key={index} className="flex items-start">
                     <span
-                      className={`flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full ${theme.accent} text-white text-xs font-bold mr-4 mt-0.5`}
+                      className={`flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full ${theme.accent} text-xs font-bold mr-4 mt-0.5`}
                     >
                       {index + 1}
                     </span>
